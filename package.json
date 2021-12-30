@@ -1,0 +1,30 @@
+{
+  "name": "metaview",
+  "version": "1.0.0",
+  "description": "Display the web page overview for human.",
+  "author": "Tomoyuki Hata",
+  "license": "MIT",
+  "homepage": "https://github.com/hata6502/metaview#readme",
+  "bugs": {
+    "url": "https://github.com/hata6502/metaview/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hata6502/metaview.git"
+  },
+  "bin": {
+    "metaview": "dist/cli.mjs"
+  },
+  "main": "dist/index.mjs",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc --noEmit"
+  },
+  "dependencies": {
+    "jsdom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^16.2.14",
+    "typescript": "^4.5.4"
+  }
+}
