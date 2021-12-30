@@ -6,7 +6,7 @@ Display the web page overview for human.
 
 ```bash
 npm i -g metaview
-metaview <(curl http://example.com/)
+metaview <(curl --silent http://example.com/)
 ```
 
 ## Fork it

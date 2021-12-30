@@ -33,7 +33,12 @@ const getHashTagLine = ({ HTMLMetaElementClass, document, }) => {
 };
 const getTitle = ({ HTMLMetaElementClass, document, }) => {
     const ogTitleElement = document.querySelector('meta[property="og:title" i]');
-    return ((ogTitleElement instanceof HTMLMetaElementClass &&
+    const title = (ogTitleElement instanceof HTMLMetaElementClass &&
         ogTitleElement.content) ||
-        document.title);
+        document.title;
+    const credits = [
+        ...document.querySelectorAll('meta[name="author" i], meta[name="creator" i], meta[name="publisher" i]'),
+    ].flatMap((creditElement) => creditElement instanceof HTMLMetaElementClass ? [creditElement.content] : []);
+    const creditLine = credits.length < 1 ? "" : `by ${credits.join(", ")}`;
+    return [title, creditLine].filter((line) => line).join("\n");
 };
